@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+  <head>
+    <title><%= zoneDisplayName %></title>
+    <%- include("head.ejs") %>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2&family=Manrope&family=Raleway&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="now-playing" class="now-playing-container">
+      <div class="image-container">
+        <img id="cover-art"/>
+      </div>
+      <div class="song-info-container">
+        <div class="song-info">
+          <div id="artist-name" class="info-text"></div>
+          <div id="song-name" class="info-text"></div>
+        </div>
+      </div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      var config = {
+        zoneName: "<%= zoneName %>",
+      };
+    </script>
+    <script src="/js/now-playing.js"></script>
+  </body>
+</html>
