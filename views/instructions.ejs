@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Please select a Roon player</title>
+    <%- include("head.ejs") %>
+    <style>
+      body.instructions {
+        margin: 20px;
+      }
+      .instructions h2 {
+        color: #666;
+      }
+    </style>
+  </head>
+  <body class="instructions">
+    <h1>No Roon zone/player selected</h1>
+    <p>
+      <ul>
+        <li>You need to add a valid Roon zone name to the URL, such as http://obs-roon-display.local:8686/Living-Room</li>
+        <li>Names will be converted into valid web addresses, such as replacing spaces with minus signs. See https://www.npmjs.com/package/slug for more info</li>        
+      </ul>
+    </p>
+    <h2>Configuring OBS</h2>
+    <p>
+      <ul>
+        <li>Add a new Browser Source</li>
+        <li>Set the URL to wherever you're running the extension web server</li>
+        <li>Set height to 300 pixels</li>
+        <li>Set the width to your desired width</li>
+        <li>Set the FPS to 60</li>
+        <li>Adjust the placement and size on your screen</li>
+      </ul>
+    </p>
+  </body>
+</html>

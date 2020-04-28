@@ -4,16 +4,128 @@
     <title><%= zoneDisplayName %></title>
     <%- include("head.ejs") %>
     <link href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2&family=Manrope&family=Raleway&display=swap" rel="stylesheet">
+    <style>
+      * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        -webkit-font-smoothing: antialiased;
+      }
+      html, body {
+        background-color: rgba(0, 0, 0, 0);
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        font-family: 'Raleway', sans-serif;
+      }
+      .wrapper {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+      }
+      #container {
+        width: 300px;
+        height: 300px;
+        position: relative;
+        background-color: rgba(0,0,0,.9);
+        margin: auto;
+        transition: opacity .4s ease, transform .4s ease, width .4s ease;
+        opacity: 0;
+        transform: translateY(300px);
+      }
+      #container.raise {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      #container.active {
+        width: 100%;
+      }
+      img {
+        width: 300px;
+        height: 300px;
+        transition: opacity .4s ease;
+        opacity: 0;
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+      img.active {
+        opacity: 1;
+      }
+      .cover {
+        width: 300px;
+        height: 300px;
+        position: relative;
+        z-index: 9;
+      }
+      .main {
+        position: absolute;
+        padding-left: 300px;
+        padding-top: 10px;
+        top: 0;
+        height: 300px;
+        width: 100%;
+        overflow: hidden;
+      }
+      #artists {
+        padding: 40px 15px 0;
+        color: #5a319c;
+        font-weight: bold;
+        margin: 0;
+        font-size: 60px;
+        text-transform: uppercase;
+      }
+      #name {
+        padding: 20px 15px;
+        color: #fff;
+        margin: 0;
+        font-size: 80px;
+      }
+      h4, h2 {
+        opacity: 0;
+        white-space: nowrap;
+        padding-left: 10px;
+        transform: translateX(-200px);
+        transition: opacity .4s ease, transform .4s ease;
+        display: inline-block;
+      }
+      h4.active, h2.active {
+        opacity: 1;
+        transform: translateX(0);
+      }
+      h4.drop, h2.drop {
+        transform: translateY(300px);
+      }
+      .artists-height-fix {
+        min-height: 120px;
+      }
+      h2.scrolling, h4.scrolling {
+        position: absolute;
+        animation: slide 30s linear infinite;
+      }
+      @keyframes slide {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-100%);
+        }
+      }
+  </style>
   </head>
-  <body>
-    <div id="now-playing" class="now-playing-container">
-      <div class="image-container">
-        <img id="cover-art"/>
-      </div>
-      <div class="song-info-container">
-        <div class="song-info">
-          <div id="artist-name" class="info-text"></div>
-          <div id="song-name" class="info-text"></div>
+  <body class="now-playing">
+    <div class="wrapper">
+      <div id="container">
+        <div class="cover">
+          <img id="album-current" alt="Current album cover">
+          <img id="album-new" alt="New album cover">
+        </div>
+        <div class="main">
+          <div class="artists-height-fix"><h4 id="artists"></h4></div>
+          <h2 id="name"></h2>
         </div>
       </div>
     </div>

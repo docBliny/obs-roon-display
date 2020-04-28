@@ -3,9 +3,17 @@
   <head>
     <title>Player not found</title>
     <%- include("head.ejs") %>
+    <style>
+      body.error-page {
+      }
+      .error-page {
+        color: #333;
+        margin: 350px 20px 20px 20px;
+      }
+    </style>
   </head>
   <body class="error-page">
     <h1>Nope, that doesn't exist. Better luck next time.</h1>
-    <p>Looks like you're trying to view a player that isn't connected. Please check the name.</p>
+    <p>Looks like you're trying to view a player that isn't connected. Please check the name, make sure it's turned on and connected to the network.</p>
   </body>
 </html>
