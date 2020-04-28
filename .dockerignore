@@ -1,0 +1,9 @@
+.dockerignore
+.gitignore
+.git
+
+server/.eslintrc
+server/config.json
+server/node_modules
+
+README.md

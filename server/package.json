@@ -10,6 +10,10 @@
     "test:watch": "esw --color --watch src/**"
   },
   "author": "Tomi Blinnikka",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/docBliny/obs-roon-display.git"
+  },
   "license": "MIT",
   "dependencies": {
     "debug": "^4.1.1",

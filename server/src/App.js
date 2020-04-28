@@ -175,7 +175,7 @@ export default class App {
   // * Private methods
   // ********************************************
   corePaired(core) {
-    roonSubscribeLog("Roon core paired");
+    console.log("Roon core paired");
 
     this._roonCore = core;
     const transport = core.services.RoonApiTransport;
@@ -183,19 +183,19 @@ export default class App {
     transport.subscribe_zones((response, data) => {
       switch(response) {
       case "Subscribed":
-        roonSubscribeLog("subscribe_zones", response, data);
+        roonSubscribeLog("subscribe_zones", response, JSON.stringify(data));
         this.setZonesFromData(data.zones);
         this.emitAllZones(this.zones);
         break;
       case "Changed":
         if(data.zones_changed) {
-          roonUpdateLog("zones_changed", response, data);
+          roonUpdateLog("zones_changed", response, JSON.stringify(data));
           this.setZonesFromData(data.zones_changed);
           this.emitAllZones(this.zones);
         }
 
         if(data.zones_seek_changed) {
-          //roonUpdateLog("zones_seek_changed", response, data);
+          //roonUpdateLog("zones_seek_changed", response, JSON.stringify(data));
           this.updateZonesFromSeekData(data.zones_seek_changed);
         }
         break;
