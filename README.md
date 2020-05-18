@@ -1,6 +1,8 @@
 # OBS Roon Display
 Simple Roon extension to display what's playing in each zone. Intended to be used for OBS as an overlay when playing music while streaming.
 
+Don't have Roon? Use my referral link: [Purchase Roon](https://roonlabs.com/r/flf4BxfNwEagR1t5ZBqYUA)
+
 To use this extension, you will need to run the project's web server on the same network/subnet as your Roon Core. You have two basic options:
 1. (Recommended) Build or use the prebuilt Docker image
 1. Install Node (https://nodejs.org/) and run the included server
