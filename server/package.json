@@ -24,7 +24,7 @@
     "node-roon-api-status": "github:roonlabs/node-roon-api-status",
     "node-roon-api-transport": "github:roonlabs/node-roon-api-transport",
     "slug": "^2.1.1",
-    "socket.io": "^2.4.0"
+    "socket.io": "^2.5.0"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
