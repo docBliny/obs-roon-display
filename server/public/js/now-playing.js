@@ -26,7 +26,7 @@ App.onZoneUpdate = function(msg) {
       const data = {
         songName: msg.now_playing.two_line.line1,
         artists: msg.now_playing.two_line.line2,
-        albumCover: msg.now_playing.image_key == undefined ? "/img/album.jpg" : "/api/images/" + msg.now_playing.image_key,
+        albumCover: msg.now_playing.image_key == undefined ? "/album.jpg" : "/api/images/" + msg.now_playing.image_key,
       };
 
       if(App.open) {
