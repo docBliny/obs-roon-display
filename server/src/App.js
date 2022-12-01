@@ -42,7 +42,6 @@ export default class App {
 
     this._httpServer = http.createServer(this.express);
     this._ioServer = io.listen(this.httpServer);
-    this._ioServer.setMaxListeners(0);
 
     // Configure web server & routes
     app.use(function(req, res, next) {
